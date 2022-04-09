@@ -10,6 +10,12 @@ export default {
     message: '',
     errors: false,
 
+    letters: [
+        'QWERTYUIOP'.split(''),
+        'ASDFGHJKL'.split(''),
+        ['Backspace', ...'ZXCVBNM'.split(''), 'Enter'],
+    ],
+
     init() {
         this.board = Array.from({length: this.guessesAllowed}, () => new Row(Array.from({length: this.theWord.length}, (item, index) => new Tile(index))))
     },
