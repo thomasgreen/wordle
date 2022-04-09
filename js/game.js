@@ -3,7 +3,7 @@ import words from './dictionary'
 import Row from "./Row";
 
 export default {
-    guessesAllowed: 6,
+    guessesAllowed: 5,
     currentRowIndex: 0,
     theWord: words[Math.floor(Math.random() * words.length)],
     state: 'active',

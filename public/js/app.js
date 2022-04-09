@@ -181,7 +181,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  guessesAllowed: 6,
+  guessesAllowed: 5,
   currentRowIndex: 0,
   theWord: _dictionary__WEBPACK_IMPORTED_MODULE_1__["default"][Math.floor(Math.random() * _dictionary__WEBPACK_IMPORTED_MODULE_1__["default"].length)],
   state: 'active',
