@@ -232,6 +232,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this.emptyTile();
     }
   },
+  matchingTileForKey: function matchingTileForKey(key) {
+    return this.board.map(function (row) {
+      return row.tiles;
+    }).flat().find(function (tile) {
+      return tile.letter === key.toLowerCase();
+    });
+  },
   fillTile: function fillTile(key) {
     var _iterator = _createForOfIteratorHelper(this.currentRow.tiles),
         _step;
