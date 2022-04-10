@@ -5,7 +5,7 @@ import Row from "./Row";
 export default {
   guessesAllowed: 5,
   currentRowIndex: 0,
-  theWord: words[Math.floor(Math.random() * words.length)],
+  theWord: '',
   state: 'active',
   message: '',
   errors: false,
@@ -17,6 +17,8 @@ export default {
   ],
 
   init() {
+    this.theWord = this.getTodaysWord();
+
     this.board = Array.from({length: this.guessesAllowed}, () => new Row(Array.from({length: this.theWord.length}, (item, index) => new Tile(index))))
   },
 
@@ -96,5 +98,11 @@ export default {
 
 
     return this.currentRowIndex++;
+  },
+
+  getTodaysWord() {
+    let date = new Date();
+    return words[Math.abs(Math.floor(Math.sin(date.getDate() + date.getMonth() + date.getFullYear()) * words.length))];
+
   },
 }
